@@ -1,0 +1,40 @@
+﻿@model StiVisita.Models.Patient;
+
+@{
+    ViewData["Title"] = "Deletar Doente";
+}
+
+<div class="my-5">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+<div class="bg-warning text-center align-middle py-2 my-5 mx-auto rounded-2 w-50">
+    <h5 class="text-danger">Tem certeza de que deseja excluir ?</h5>
+</div>
+
+<h3>@ViewData["Title"]</h3>
+
+<hr />
+<div>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(patient => patient.PatientCode)
+        </dt>
+        <dd class = "col-sm-7 text-success fw-bolder">
+            @Html.DisplayFor(patient => patient.PatientCode)
+        </dd>
+    </dl>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(patient => patient.Name)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(patient => patient.Name)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger my-3" /> 
+    </form>
+</div>

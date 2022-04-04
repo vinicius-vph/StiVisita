@@ -1,0 +1,52 @@
+﻿@model StiVisita.Models.Admission
+
+
+@{
+    ViewData["Title"] = "Detalhes da Admissão do Doente";
+}
+
+<div class = "my-5">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+<h1 class="my-3">@ViewData["Title"]</h1>
+
+<hr />
+
+<div>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.AdmissionCode)
+        </dt>
+        <dd class = "col-sm-7 text-success fw-bolder">
+            @Html.DisplayFor(model => model.AdmissionCode)
+        </dd>
+    </dl>
+
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+    </dl>
+
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.EntryDate)
+        </dd>    
+    </dl>
+        
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Observation)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Observation)
+        </dd>
+    </dl>
+</div>

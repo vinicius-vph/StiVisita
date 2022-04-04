@@ -1,0 +1,57 @@
+﻿@model StiVisita.Models.Admission;
+
+@{
+    ViewData["Title"] = "Deletar Admissão";
+}
+<div class="my-5">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+<div class="bg-warning text-center py-2 my-3 mx-auto rounded-2 w-50">
+    <h5 class="text-danger">Tem certeza de que deseja excluir ?</h5>
+</div>
+
+<h3>@ViewData["Title"]</h3>
+ <hr />
+
+<div>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.AdmissionCode)
+        </dt>
+        <dd class = "col-sm-7 text-success fw-bolder">
+            @Html.DisplayFor(model => model.AdmissionCode)
+        </dd>
+    </dl>
+
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+    </dl>
+
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.EntryDate)
+        </dd>    
+    </dl>
+        
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Observation)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Observation)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger my-3" /> 
+    </form>
+</div>

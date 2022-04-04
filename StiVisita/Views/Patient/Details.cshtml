@@ -1,0 +1,33 @@
+﻿@model StiVisita.Models.Patient
+
+
+@{
+    ViewData["Title"] = "Detalhes do Doente";
+}
+
+<div class = "my-5">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+<h1 class="my-3">@ViewData["Title"]</h1>
+
+<hr />
+<div>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(patient => patient.PatientCode)
+        </dt>
+        <dd class = "col-sm-7 text-success fw-bolder">
+            @Html.DisplayFor(patient => patient.PatientCode)
+        </dd>
+    </dl>
+    <dl class="row my-3 py-3 border border-5 rounded-3 border-light">
+
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(patient => patient.Name)
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(patient => patient.Name)
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<StiVisita.Models.Admission>
+
+@{
+    ViewData["Title"] = "Lista de Admissões";
+}
+
+<h1> @ViewData["Title"]</h1>
+
+<div class="container my-5">
+    <div class="d-grid gap-2 d-md-block">
+        <a asp-action="Create" class="btn btn-primary">Nova Admissão</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdmissionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryDate)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+            <tr class="align-middle">
+                <td>
+                    <p class="badge bg-info text-wrap">
+                        @Html.DisplayFor(modelItem => item.AdmissionCode)
+                   </p>
+                </td>
+                <td>
+                    <p class="my-0">
+                        @Html.DisplayFor(modelItem => item.PatientName)
+                    </p>
+                </td>
+                <td>
+                    <p class="my-0">
+                        @Html.DisplayFor(modelItem => item.EntryDate)
+                    </p>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Detalhes</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> 
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
